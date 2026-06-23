@@ -31,7 +31,7 @@ const Register = () => {
         const form = new FormData(e.target)
 
         const name = form.get("name");
-        const photo_url = form.get("photo_url");
+        const photo_URL = form.get("photo_URL");
         const email = form.get("email");
 
         const password = form.get("password");
@@ -56,8 +56,8 @@ const Register = () => {
         }
 
 
-        console.log(name, photo_url, email, password)
-        console.log({ name, photo_url, email, password })
+        console.log(name, photo_URL, email, password)
+        console.log({ name, photo_URL, email, password })
 
 
         createUser(email, password)
@@ -67,13 +67,13 @@ const Register = () => {
 
 
                 updateUserProfile({
-                    displayName: name,
-                    photoURL: photo_url
+                    displayName: name,   // ---> from firebase
+                    photoURL: photo_URL   //---> from firebase
                 })
                     .then(() => {
                         setUser({
                             ...user, displayName: name,
-                            photoURL: photo_url
+                            photoURL: photo_URL
                         });
 
                         navigate("/");
@@ -119,7 +119,7 @@ const Register = () => {
                             <input type="text" name="name" className="input  w-full bg-red-100 border-0" placeholder="Enter your name" />
 
                             <label className="label text-gray-800 font-semibold">Photo URL</label>
-                            <input type="text" name="photo_url" className="input w-full bg-red-100 border-0" placeholder="Enter your photo_url" />
+                            <input type="text" name="photo_URL" className="input w-full bg-red-100 border-0" placeholder="Enter your photo_url" />
 
                             <label className="label text-gray-800 font-semibold">Email</label>
                             <input type="email" name="email" className="input w-full bg-red-100 border-0" placeholder="Enter your email address" />
@@ -151,7 +151,7 @@ const Register = () => {
                     </form>
 
                     <p className="text-center pb-6">Already Have An Account ?<small className="text-red-600 font-medium">
-                        <Link to='/login' >Login</Link>
+                        <Link to='/authentication/login' >Login</Link>
                     </small></p>
 
                 </div>

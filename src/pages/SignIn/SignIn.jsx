@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-
+import animationData from '../../assets/animation.json';
 
 
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
@@ -117,7 +117,7 @@ const SignIn = () => {
                 </form>
 
                 <p className="text-center pb-6">Dont’t Have An Account ?<small className="text-red-600 font-medium">
-                    <Link to='/register' >Register</Link>
+                    <Link to='/authentication/register' >Register</Link>
                 </small>
                 </p>
 
@@ -134,13 +134,13 @@ const SignIn = () => {
 
 
 
-            <div className="w-64 h-64">
-                <DotLottieReact
-                    src="login.lottie" // public ফোল্ডারে রাখলে সরাসরি এভাবে পাথ দেয়া যায়
-                    loop
-                    autoplay
-                />
-            </div>
+           <div className="w-100 h-100">
+                          <DotLottieReact
+                              data={animationData} // এখানে src এর বদলে data ব্যবহার করতে হবে
+                              loop
+                              autoplay
+                          />
+                      </div>
 
 
 
