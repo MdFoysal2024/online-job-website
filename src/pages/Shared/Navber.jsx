@@ -5,6 +5,7 @@ import { FcOnlineSupport } from "react-icons/fc";
 import AuthContext from "../../context/AuthContext/AuthContext";
 import jobLogo from '../../assets/job-log.png'
 import { easeOut, motion } from "framer-motion";
+import { FaUserCircle } from "react-icons/fa";
 
 
 
@@ -77,7 +78,23 @@ const Navber = () => {
                                     <div tabIndex={0} role="" className=" cursor-pointer m-1">
 
 
-                                        <img className="w-12 border-2  border-gray-500 mx-auto rounded-full" src={user?.photoURL} alt="" />
+                                        {/* <img className="w-12 border-2  border-gray-500 mx-auto rounded-full" src={user?.photoURL} alt=" img..." /> */}
+
+
+                                        <div className="w-12 h-12 mx-auto">
+                                            {
+                                                user?.photoURL ? (
+                                                    <img
+                                                        className="w-12 h-12 border-2 border-gray-500 rounded-full"
+                                                        src={user.photoURL}
+                                                        alt="user"
+                                                    />
+                                                ) : (
+                                                    <FaUserCircle className="w-12 h-12 text-gray-500" />
+                                                )
+                                            }
+                                        </div>
+
                                     </div>
                                     <div tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-48 p-2 shadow-sm">
 
@@ -111,20 +128,22 @@ const Navber = () => {
                             </div>
                         </>
                             :
-                            <> <div className="navbar-end">
+                            <> <div className="md:navbar-end ">
 
-                                <Link to='/authentication/register' className="px-4 border-2 border-blue-500 py-1 rounded font-semibold mr-4 hover:-translate-y-1 transition-all duration-300 ">Register</Link>
+                                <Link to='/authentication/register' className="px-2 border-2 border-blue-500 py-1 rounded font-semibold mr-4 hover:-translate-y-1 transition-all duration-300 ">Register</Link>
 
                                 {/* <Link to='/authentication/login' className="btn bg-blue-500 text-white hover:-translate-y-1 transition-all duration-300">Sign In</Link> */}
 
 
                                 <Link to='/authentication/login' className=" font-bold hover:-translate-y-1 transition-all duration-300">
 
-
                                     <motion.span
                                         className="px-3 py-2 rounded text-white"
+
                                         animate={{ backgroundColor: ['#FF0000', '#009AFF',] }}
+
                                         transition={{ duration: 1, delay: 1, ease: easeOut, repeat: Infinity }}
+
                                     > Sign In</motion.span>
                                 </Link>
 

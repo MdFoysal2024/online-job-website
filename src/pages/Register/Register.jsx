@@ -8,6 +8,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import animationData from '../../assets/animation.json';
 import AuthContext from '../../context/AuthContext/AuthContext';
+import SocialLogin from '../Shared/SocialLogin';
 
 
 
@@ -153,6 +154,9 @@ const Register = () => {
                     <p className="text-center pb-6">Already Have An Account ?<small className="text-red-600 font-medium">
                         <Link to='/authentication/login' >Login</Link>
                     </small></p>
+
+
+                     <SocialLogin></SocialLogin>
 
                 </div>
             </div>

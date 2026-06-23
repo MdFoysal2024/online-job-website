@@ -5,6 +5,7 @@ import animationData from '../../assets/animation.json';
 
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import AuthContext from "../../context/AuthContext/AuthContext";
+import SocialLogin from "../Shared/SocialLogin";
 
 
 const SignIn = () => {
@@ -122,7 +123,7 @@ const SignIn = () => {
                 </p>
 
                 
-
+<SocialLogin></SocialLogin>
             </div>
 
 
