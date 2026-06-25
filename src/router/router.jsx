@@ -6,6 +6,7 @@ import Register from '../pages/Register/Register';
 import SignIn from '../pages/SignIn/SignIn';
 import AnimationTest from '../pages/AnimationTest/AnimationTest';
 import AuthLayout from '../Authentication/AuthLayout';
+import JobDetails from '../pages/Job/JobDetails';
 
 const router = createBrowserRouter([
 
@@ -27,6 +28,19 @@ const router = createBrowserRouter([
             {
                 path: "/animationTest",
                 element: <AnimationTest></AnimationTest>
+            },
+            {
+                path: '/jobDetails/:id',
+                element: <JobDetails></JobDetails>
+
+
+                ,
+                loader: async ({ params }) => {
+                    const paramsData = await fetch("http://localhost:3000/jobs")
+                    const data = await paramsData.json();
+                    const singleData = data.find(d => d._id == params.id)
+                    return singleData;
+                }
             },
             {
                 path: "/authentication",

@@ -9,7 +9,7 @@ const LatestNews = () => {
 
 
     return (
-        <div className=' py-12  cursor-pointer'>
+        <div className=' pt-12  cursor-pointer'>
             <div className='flex items-center bg-gray-100 p-2 gap-2'>
 
                 <p className='bg-pink-800 px-2 text-xl py-1 font-medium text-white'>Latest</p>

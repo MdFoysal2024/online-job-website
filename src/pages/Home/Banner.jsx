@@ -8,7 +8,7 @@ import img2 from '../../assets/banner-img2.jpg'
 const Banner = () => {
     return (
         <div>
-            <div className="hero bg-amber-200 min-h-96">
+            <div className="hero bg-slate-100 py-24 min-h-96">
                 <div className="hero-content  flex justify-between items-center flex-col lg:flex-row">
 
 
